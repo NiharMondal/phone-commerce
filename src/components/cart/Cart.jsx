@@ -4,7 +4,7 @@ import CartColums from './CartColums';
 import { ProductConsumer } from '../../context';
 import CartList from './CartList';
 import CartTotal from './CartTotal';
-const Cart = () => {
+const Cart = (props) => {
   return (
     <section>
       <ProductConsumer>
@@ -16,7 +16,7 @@ const Cart = () => {
                 <Title name="Your" title="cart" />
                 <CartColums />
                 <CartList value={value} />
-                <CartTotal value={value}/>
+                <CartTotal value={value} history={ props.history}/>
               </React.Fragment>
             )
           } else {
